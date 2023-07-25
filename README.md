@@ -1,114 +1,107 @@
-# Programming Challenge 
+# Blog App
 
-Frontend Developer Position.
+## version
 
-Please read this document from beginning to end, paying close attention. 
+1.0.0
 
-The purpose of this test is to evaluate your technical knowledge in programming.
+## Author
 
-Take as much time as you need, but typically, you should not require more than a few hours.
+Andrus Wen
 
-# Practical Test:
+# Instruction
 
-  ReactJS/NextJS
+Node v18.16.0
 
+# App Design
+
+First of all, here Nextjs is used for SSG and SSR. \
+To implement authentication, I chose `NextAuth.js` and `Google Provider` of it to implement auth flow and by checking the token, `Add/Edit Post` functionality is limited to unauthorized users. \
+For the styling, I chose `styled-components` since it is one of the great ways to implement styling in Next.js. \
+To show the state management, I chose `Context API` since I need to share the post detail between `Post List` page and `Post Detail` page. \
+The most important one is to mock the server and It is done successfully by `Next/API`. First of all, in order to persist the posts and comments, I set JSON file as database and by W/R to the file, I mocked all the api endpoints. The detailed explanation is added to each function in `/pages/api` folder.
+The second hard one is to enact the notification system. I think the best solution is to use Websocket so I installed `Socket.io` on both `Next/API` and the components.
+
+## App test
+
+I know it is good to check the Nextjs app on Vercel. But it uses serverless apis and have the `call maximum execution limit` and it doesn't allow Websocket to work on it. \
+So I suggest you to install this app on your local and check all of its functionalities.
+
+## Installation
+
+- Run `yarn` or `npm i`
+- Run `yarn dev` or `npm dev` for the local environment
+- Run `yarn build & yarn start` for the production environment
+
+## Set environment variables
+
+Please check `.env.template` file and add `.env.local` file for your local test.
+
+# Tech Stacks
+
+UI/SSR/SSG: ReactJS/NextJS
+
+Authentication: NextAuth GoogleProvider
+
+Realtime Notification: Socket.io
+
+Styling: Styled components
+
+DB: JSON mock database file
+
+State Management: Context API
+
+Form Management: react-hook-form and yup resolver
+
+API Endpoints: Next/API
 
 # Duration:
 
-  5-8 hours (depending on available time and expected complexity)
+About 5 hours
 
-# Challenge Delivery Instructions:
+# Project Description and tasks implementation check:
 
-  First, fork this project to your Github account (create one if you don't have it).
-  
-  Next, implement the project as described below in your local clone.
-  
-  Finally, send the project or fork/link of the project via email to your CYBERBOX contact wilker.flores@protonmail.com.
+You are required to develop a small blog application with the following functionalities:
 
-# Project Description:
+- Homepage:
 
-  You are required to develop a small blog application with the following functionalities:
-  
-  
-* Homepage:
-  
-  Display a list of blog posts in descending order based on the publication date. 
-  
+  Display a list of blog posts in descending order based on the publication date.
+
   Each list item should show the title, a brief summary, and the publication date.
-  
+
   The homepage should be created using NextJS's Static Site Generation (SSG).
-  
-  
-* Post Detail Page: 
-  
-  When a user clicks on a post on the homepage, they should be directed to the post detail page. 
-  
-  This page should display the title, publication date, full  content of the post, and related comments. 
-  
+
+- Post Detail Page:
+
+  When a user clicks on a post on the homepage, they should be directed to the post detail page.
+
+  This page should display the title, publication date, full content of the post, and related comments.
+
   Server Side Rendering (SSR) from NextJS should be used to fetch post details for each post.
-  
-  
-* Add/Edit Post Page:
-  
-  Implement a form to add a new blog post. 
-  
+
+- Add/Edit Post Page:
+
+  Implement a form to add a new blog post.
+
   The form should include fields for the title, summary, content, and publication date.
-  
+
   The same form should be used to edit existing posts.
-  
-  
-* Authentication:
+
+- Authentication:
 
   Implement basic authentication (can be a mock) to protect the add/edit post page.
-  
-  Only authenticated users should be able to add or edit posts.
-  
-  
-* Comments:
 
-  Allow users to leave comments on the posts. 
-  
+  Only authenticated users should be able to add or edit posts.
+
+- Comments:
+
+  Allow users to leave comments on the posts.
+
   For this, a form should be available on the post detail page.
-  
-  
-* Notifications:
+
+- Notifications:
 
   Implement a basic notification system that notifies the user when a new comment is added to one of their posts.
-  
-  
-* Validations:
+
+- Validations:
 
   Implement validations on the add/edit post and comment forms to ensure that the entered data is valid.
-  
-
-# Technical Requirements:
-
-  Use ReactJS for building the user interface.
-  
-  Utilize NextJS for Server Side Rendering (SSR) and/or Static Site Generation (SSG).
-  
-  For state management, use context API or Redux (optional).
-  
-  For styling, use CSS-in-JS (e.g., styled-components) or CSS/Sass.
-  
-  Code should be well-organized and easy to understand.
-  
-  Comments in the code to explain design decisions are encouraged.
-
-# Evaluation:
-
-Your project will be evaluated based on the following criteria:
-
-  Does your application meet the basic requirements?
-  
-  Have you documented the setup instructions and how to run your application?
-  
-  Did you follow the challenge submission instructions?
-
-Additionally, we will try to assess your familiarity with standard libraries and your experience with object-oriented programming based on the structure of your project.
-
-# _
-
-
-Good luck!
-
