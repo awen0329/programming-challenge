@@ -4,10 +4,6 @@
 
 1.0.0
 
-## Author
-
-Andrus Wen
-
 # Instruction
 
 Node v18.16.0
